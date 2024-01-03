@@ -1,0 +1,238 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    background: linear-gradient(-45deg, #f8b195, #f67280, #c06c84, #6c5b7b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+nav, main, footer {
+    animation: fadeIn 1s ease-out;
+}
+
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+    background-color: #555;
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 0;
+    width: 100%;
+    text-align: center; /* Center aligning main content */
+}
+
+.search-section, .feedback-section, .faq-section {
+    margin-bottom: 30px;
+}
+
+.search-section h1, .feedback-section h2 {
+    color: #fefefe;
+    margin-bottom: 20px;
+}
+
+/* Search Section Styles */
+#searchInput, #minPrice, #maxPrice {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#feedback-button{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+#searchResults {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* FAQ Section Styles */
+.faq-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+    margin-bottom: 10px; /* Reduced margin to bring boxes closer to footer */
+}
+
+.faq-box {
+    flex: 1;
+    min-width: 250px; /* Minimum width for each box */
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for hover effect */
+}
+
+.faq-box:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Increased shadow on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* Scrollable Container for Search Results */
+.scrollable-container {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+/* Tool Container Styles */
+.tool-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background-color: white;
+}
+
+.tool-container h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.tool-container p {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .faq-section {
+        flex-direction: column;
+    }
+
+    .faq-box {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    #searchInput, #minPrice, #maxPrice {
+        width: 100%;
+    }
+}
+
+.feedback-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.feedback-popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.close-popup {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+}

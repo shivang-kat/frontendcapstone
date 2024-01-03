@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capstone Project</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Capstone Project</div>
+        <div class="navbar-links">
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About Project</a>
+            <a href="contributions.html">Our Contributions</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="search-section">
+            <h1>Find Your Best Suitable Tool Here!</h1>
+            <input type="text" id="searchInput" placeholder="Search...">
+            <div class="price-range">
+                <input type="number" id="minPrice" placeholder="Min Price">
+                <input type="number" id="maxPrice" placeholder="Max Price">
+            </div>
+            <button id="searchButton">Search</button>
+            <div id="searchResults"><!-- Search results will be displayed here --></div>
+        </section>
+        
+
+        <section class="feedback-section">
+            <h2>Submit Your Feedback</h2>
+            <form id="feedbackForm">
+                <!-- Feedback form elements will be dynamically generated here -->
+            </form>
+            <button onclick="submitUserFeedback()" id="feedback-button">Submit Feedback</button>
+        </section>
+
+        <div id="feedbackPopup" class="feedback-popup" style="display: none;">
+            <div class="feedback-popup-content">
+                <span class="close-popup" onclick="closePopup()">&times;</span>
+                <p>Thank you for your valuable feedback!</p>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <div class="faq-box">FAQ 1 
+                How Can Marketing Tools Benefit My Business?
+<br> 
+<br>
+Marketing tools can help you reach a larger audience, engage with customers, analyze market trends, and improve the efficiency of your marketing campaigns. They can also provide valuable insights into customer behavior and campaign performance.
+            </div>
+            <div class="faq-box">FAQ 2 
+                There Free Marketing Tools Available?
+                <br>
+                <br>
+
+Content: Yes, there are many free marketing tools available that offer a range of functionalities, from social media scheduling to email marketing. While they may have limitations compared to paid versions, they are great for businesses just starting out or on a tight budget.
+            </div>
+            <div class="faq-box">FAQ 3 
+                How Do I Choose the Right Marketing Tools for My Business?
+<br>
+<br>
+Choosing the right marketing tools depends on your business goals, target audience, and budget. It's important to assess the features you need, such as automation, analytics, or customer relationship management, and consider tools that align with these needs.
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Capstone Project</p>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="homepage.js"></script>
+</body>
+</html>
